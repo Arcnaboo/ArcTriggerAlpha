@@ -11,5 +11,14 @@ namespace ArcTrigger.Core.Entities
         public Guid Id { get; set; }
         public string Email { get; set; }
         public string Password { get; set; }
+
+        private User() { }
+        public User(string mail, string pass) 
+
+        {
+            Email = mail;
+            Password = pass;
+            Id = Guid.NewGuid();
+        }
     }
 }

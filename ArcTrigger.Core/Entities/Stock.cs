@@ -10,5 +10,17 @@ namespace ArcTrigger.Core.Entities
     {
         public Guid Id { get; set; }
         public string Symbol { get; set; }
+
+
+        private Stock()
+        {
+        }
+
+
+        public Stock(string symbol)
+        {
+            Id = Guid.NewGuid();
+            this.Symbol = symbol;  
+        }
     }
 }

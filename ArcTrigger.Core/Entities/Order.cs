@@ -9,7 +9,21 @@ namespace ArcTrigger.Core.Entities
     public class Order
     {
 
-        public Guid Id { get; set; }
-        public Guid UserId { get; set; }
+        public Guid Id { get;  }
+        public int intid { get;  }
+        public Guid UserId { get;  }
+        public string Symbol { get; set; }
+
+        public DateTime DateTime { get; set; }
+
+        private Order() { }
+        public Order(int intid, Guid userId, string symbol)
+        {
+            Id = Guid.NewGuid();
+            this.intid = intid;
+            UserId = userId;
+            Symbol = symbol;
+            DateTime = DateTime.UtcNow;
+        }
     }
 }

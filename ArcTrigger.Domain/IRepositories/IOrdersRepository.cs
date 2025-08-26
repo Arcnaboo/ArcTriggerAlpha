@@ -17,8 +17,7 @@ namespace ArcTrigger.Domain.IRepositories
 
         Task AddOrderAsync(Order order, CancellationToken ct = default);
         Task AddOrdersAsync(IEnumerable<Order> orders, CancellationToken ct = default);
-        Task RemoveOrderByGuidAsync(Guid orderId, CancellationToken ct = default);
-        Task RemoveOrderByIdAsync(int id, CancellationToken ct = default);
+
         Task RemoveOrderAsync(Order order, CancellationToken ct = default);
 
         // -------- Previous Orders (History) --------
@@ -30,8 +29,8 @@ namespace ArcTrigger.Domain.IRepositories
 
         Task AddPreviousOrderAsync(PreviousOrder previousOrder, CancellationToken ct = default);
         Task AddPreviousOrdersAsync(IEnumerable<PreviousOrder> previousOrders, CancellationToken ct = default);
-        Task RemovePreviousOrderByGuidAsync(Guid previousOrderId, CancellationToken ct = default);
-        Task RemovePreviousOrderByIdAsync(int id, CancellationToken ct = default);
+        
+      
         Task RemovePreviousOrderAsync(PreviousOrder previousOrder, CancellationToken ct = default);
 
         // -------- Persistence --------

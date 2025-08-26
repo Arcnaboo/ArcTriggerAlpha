@@ -2,12 +2,10 @@
 using ArcTrigger.Domain.Contexts;
 using ArcTrigger.Domain.IRepositories;
 using Microsoft.EntityFrameworkCore;
-using System;
-using System.Collections.Generic;
+
+
 using System.Data.Entity;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+
 using EntityState = Microsoft.EntityFrameworkCore.EntityState;
 
 namespace ArcTrigger.Domain.Repositories
@@ -22,12 +20,12 @@ namespace ArcTrigger.Domain.Repositories
         }
         async Task IUsersRepository.AddUserAsync(User user, CancellationToken ct)
         {
-            await _triggerContext.Users.AddAsync(user, ct);
+             await _triggerContext.Users.AddAsync(user, ct);
         }
 
-        async Task<bool> IUsersRepository.EmailExistsAsync(string email, CancellationToken ct)
+         bool IUsersRepository.EmailExistsAsync(string email, CancellationToken ct)
         {
-            return await _triggerContext.Users.Where(x => x.Email == email).AnyAsync();
+            return _triggerContext.Users.Where(x => x.Email == email).Any();
         }
 
 
@@ -42,9 +40,9 @@ namespace ArcTrigger.Domain.Repositories
             return await _triggerContext.Users.Where(x => x.Email == email).FirstOrDefaultAsync();
         }
 
-        async Task<List<User>> IUsersRepository.GetUsersAsync()
+        async Task<IQueryable<User>> IUsersRepository.GetUsersAsync()
         {
-            return await _triggerContext.Users.ToListAsync();
+            return (IQueryable<User>)await _triggerContext.Users.ToListAsync();
         }
 
         async Task IUsersRepository.RemoveUserAsync(Guid userId, CancellationToken ct)

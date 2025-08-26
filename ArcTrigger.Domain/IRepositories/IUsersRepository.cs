@@ -12,8 +12,8 @@ namespace ArcTrigger.Domain.IRepositories
         Task<User?> FindAsync(Guid userId, CancellationToken ct = default);
         Task<User?> FindByEmailAsync(string email, CancellationToken ct = default);
 
-        Task<bool> EmailExistsAsync(string email, CancellationToken ct = default);
-        Task<List<User>> GetUsersAsync();
+        bool EmailExistsAsync(string email, CancellationToken ct = default);
+        Task<IQueryable<User>> GetUsersAsync();
        
         // Writes (EF Core tracking handles updates)
         Task AddUserAsync(User user, CancellationToken ct = default);

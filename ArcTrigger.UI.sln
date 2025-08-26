@@ -1,13 +1,15 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
-VisualStudioVersion = 17.14.36414.22 d17.14
+VisualStudioVersion = 17.14.36414.22
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ArcTrigger.UI", "ArcTrigger.UI\ArcTrigger.UI.csproj", "{F2B91AA5-097A-482F-8935-69EFF3F56D74}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ArcTrigger.Core", "ArcTrigger.Core\ArcTrigger.Core.csproj", "{9CABDC76-1DEB-443B-ACBF-84B971AB3677}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ArcTrigger.Domain", "ArcTrigger.Domain\ArcTrigger.Domain.csproj", "{9E7B2A70-01FF-4EF7-BA93-916E73FE0FEA}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestCLI", "TestCLI\TestCLI.csproj", "{EC1D9F8D-BD5F-4689-A0C3-599141E0913C}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -28,6 +30,10 @@ Global
 		{9E7B2A70-01FF-4EF7-BA93-916E73FE0FEA}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{9E7B2A70-01FF-4EF7-BA93-916E73FE0FEA}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{9E7B2A70-01FF-4EF7-BA93-916E73FE0FEA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EC1D9F8D-BD5F-4689-A0C3-599141E0913C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EC1D9F8D-BD5F-4689-A0C3-599141E0913C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EC1D9F8D-BD5F-4689-A0C3-599141E0913C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EC1D9F8D-BD5F-4689-A0C3-599141E0913C}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
