@@ -11,9 +11,6 @@ namespace ArcTrigger.Domain.Contexts
 {
     public class TriggerContext : DbContext
     {
-        public TriggerContext(DbContextOptions<TriggerContext> options) : base(options)
-        {
-        }
 
         // DbSets
         public DbSet<User> Users { get; set; }
