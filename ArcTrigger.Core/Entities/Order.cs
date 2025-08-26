@@ -8,5 +8,8 @@ namespace ArcTrigger.Core.Entities
 {
     public class Order
     {
+
+        public Guid Id { get; set; }
+        public Guid UserId { get; set; }
     }
 }

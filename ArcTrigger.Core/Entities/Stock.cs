@@ -8,5 +8,7 @@ namespace ArcTrigger.Core.Entities
 {
     public class Stock
     {
+        public Guid Id { get; set; }
+        public string Symbol { get; set; }
     }
 }

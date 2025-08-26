@@ -21,6 +21,6 @@ namespace ArcTrigger.Domain.IRepositories
         Task RemoveUserAsync(User user, CancellationToken ct = default);
 
         // Persistence
-        Task<int> SaveChangesAsync(CancellationToken ct = default);
+        Task SaveChangesAsync(CancellationToken ct = default);
     }
 }
