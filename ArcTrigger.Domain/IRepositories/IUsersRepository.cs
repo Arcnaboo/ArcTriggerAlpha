@@ -11,7 +11,7 @@ namespace ArcTrigger.Domain.IRepositories
         // Reads
         Task<User?> FindAsync(Guid userId, CancellationToken ct = default);
         Task<User?> FindByEmailAsync(string email, CancellationToken ct = default);
-        Task<bool> ExistsAsync(Guid userId, CancellationToken ct = default);
+
         Task<bool> EmailExistsAsync(string email, CancellationToken ct = default);
         Task<List<User>> GetUsersAsync();
        
