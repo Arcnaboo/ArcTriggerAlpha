@@ -1,12 +1,14 @@
 ﻿using ArcTrigger.Core.Entities;
 using ArcTrigger.Domain.Contexts;
 using ArcTrigger.Domain.IRepositories;
+using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.Data.Entity;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using EntityState = Microsoft.EntityFrameworkCore.EntityState;
 
 namespace ArcTrigger.Domain.Repositories
 {
@@ -59,7 +61,61 @@ namespace ArcTrigger.Domain.Repositories
 
         async Task IUsersRepository.SaveChangesAsync(CancellationToken ct)
         {
-            await _triggerContext.SaveChangesAsync(ct);
+            //await _triggerContext.SaveChangesAsync(ct);
+            int retryCount = 3; // Number of retry attempts
+            bool saveFailed;
+
+            do
+            {
+                saveFailed = false;
+                try
+                {
+                    await _triggerContext.SaveChangesAsync();
+                }
+                catch (DbUpdateConcurrencyException ex)
+                {
+                    saveFailed = true;
+
+                    if (retryCount-- <= 0)
+                        throw; // Re-throw if we've exhausted retries
+
+                    // Refresh all affected entries
+                    foreach (var entry in ex.Entries)
+                    {
+                        await entry.ReloadAsync();
+
+                        // For updates, you might want to preserve some changes
+                        if (entry.State == EntityState.Modified)
+                        {
+                            var currentValues = entry.CurrentValues;
+                            var databaseValues = entry.GetDatabaseValues();
+
+                            // Here you can implement your merge strategy
+                            foreach (var property in currentValues.Properties)
+                            {
+                                var currentValue = currentValues[property];
+                                var databaseValue = databaseValues[property];
+
+                                // Example: Keep current value if it was modified
+                                if (!Equals(currentValue, entry.OriginalValues[property]))
+                                {
+                                    databaseValues[property] = currentValue;
+                                }
+                            }
+
+                            entry.OriginalValues.SetValues(databaseValues);
+                        }
+                    }
+                }
+                catch (Exception ex)
+                {
+                    // Log other exceptions (DbUpdateException, etc.)
+                    // Consider using a logging framework here
+                    Console.WriteLine($"Save changes failed: {ex.Message}");
+                    throw;
+                }
+            } while (saveFailed && retryCount > 0);
         }
+        
     }
 }
