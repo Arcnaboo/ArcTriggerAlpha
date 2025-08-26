@@ -5,6 +5,10 @@ VisualStudioVersion = 17.14.36414.22 d17.14
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ArcTrigger.UI", "ArcTrigger.UI\ArcTrigger.UI.csproj", "{F2B91AA5-097A-482F-8935-69EFF3F56D74}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ArcTrigger.Core", "ArcTrigger.Core\ArcTrigger.Core.csproj", "{9CABDC76-1DEB-443B-ACBF-84B971AB3677}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ArcTrigger.Domain", "ArcTrigger.Domain\ArcTrigger.Domain.csproj", "{9E7B2A70-01FF-4EF7-BA93-916E73FE0FEA}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -13,8 +17,17 @@ Global
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
 		{F2B91AA5-097A-482F-8935-69EFF3F56D74}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{F2B91AA5-097A-482F-8935-69EFF3F56D74}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F2B91AA5-097A-482F-8935-69EFF3F56D74}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
 		{F2B91AA5-097A-482F-8935-69EFF3F56D74}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{F2B91AA5-097A-482F-8935-69EFF3F56D74}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9CABDC76-1DEB-443B-ACBF-84B971AB3677}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9CABDC76-1DEB-443B-ACBF-84B971AB3677}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9CABDC76-1DEB-443B-ACBF-84B971AB3677}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9CABDC76-1DEB-443B-ACBF-84B971AB3677}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9E7B2A70-01FF-4EF7-BA93-916E73FE0FEA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9E7B2A70-01FF-4EF7-BA93-916E73FE0FEA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9E7B2A70-01FF-4EF7-BA93-916E73FE0FEA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9E7B2A70-01FF-4EF7-BA93-916E73FE0FEA}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
