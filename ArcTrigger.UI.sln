@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.14.36414.22 d17.14
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ArcTrigger.UI", "ArcTrigger.UI\ArcTrigger.UI.csproj", "{F2B91AA5-097A-482F-8935-69EFF3F56D74}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{F2B91AA5-097A-482F-8935-69EFF3F56D74}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F2B91AA5-097A-482F-8935-69EFF3F56D74}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F2B91AA5-097A-482F-8935-69EFF3F56D74}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F2B91AA5-097A-482F-8935-69EFF3F56D74}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {B77FF097-3F37-480F-9347-B3207A4F6AE3}
+	EndGlobalSection
+EndGlobal
