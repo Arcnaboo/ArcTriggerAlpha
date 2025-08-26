@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace ArcTrigger.Core.Entities
 {
-    public class Stock
+    public class PreviousOrder
     {
     }
 }

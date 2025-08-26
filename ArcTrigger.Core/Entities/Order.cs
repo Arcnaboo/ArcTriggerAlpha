@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace ArcTrigger.Core.Entities
 {
-    internal class Order
+    public class Order
     {
     }
 }
