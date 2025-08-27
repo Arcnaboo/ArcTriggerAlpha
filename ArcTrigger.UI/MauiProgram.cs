@@ -1,4 +1,6 @@
-﻿using Microsoft.Extensions.Logging;
+﻿using ArcTrigger.Domain.IServices;
+using ArcTrigger.Domain.Services;
+using Microsoft.Extensions.Logging;
 
 namespace ArcTrigger.UI
 {
@@ -15,8 +17,11 @@ namespace ArcTrigger.UI
                     fonts.AddFont("OpenSans-Semibold.ttf", "OpenSansSemibold");
                 });
 
+            // Servis kaydı
+            builder.Services.AddSingleton<IMarketDataService, MarketDataService>();
+
 #if DEBUG
-    		builder.Logging.AddDebug();
+            builder.Logging.AddDebug();
 #endif
 
             return builder.Build();

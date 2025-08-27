@@ -30,6 +30,16 @@
                 SemanticProperties.Hint="Counts the number of times you click"
                 Clicked="OnCounterClicked"
                 HorizontalOptions="Fill" />
+
+            <HorizontalStackLayout Spacing="12">
+                <Button Text="Start Stream" Clicked="OnStartClicked" />
+                <Button Text="Stop" Clicked="OnStopClicked" />
+            </HorizontalStackLayout>
+
+            <Editor x:Name="LogBox"
+                    HeightRequest="200"
+                    IsReadOnly="True"
+                    Placeholder="Gelen JSON burada görünecek..." />
         </VerticalStackLayout>
     </ScrollView>
 
